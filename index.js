@@ -1,4 +1,5 @@
 var replace = require('gulp-replace');
+var minifyHTML = require('gulp-minify-html');
 
 module.exports = function (tam, assets, gulp) {
 
@@ -24,6 +25,7 @@ module.exports = function (tam, assets, gulp) {
   gulp.src(option.src)
     .pipe(replace(/(<link .*?href=")@tam\/(.+?)(".*?>)/g, ReplaceToHTML('.css')))
     .pipe(replace(/(<script .*?src=")@tam\/(.+?)(".*?><\/script>)/g, ReplaceToHTML('.js')))
+    .pipe(minifyHTML())
     .pipe(gulp.dest(option.dest));
 
 };
