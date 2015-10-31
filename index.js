@@ -7,7 +7,9 @@ module.exports = function (tam, assets, gulp) {
     return;
   }
 
-  var linked = this.read(assets);
+  var assets = tam.read(assets);
+  var linked = tam.read(assets.linked);
+  var option = assets.plugins['tam-html'];
 
   var getBySuffix = function (pkg, suffix) {
     var suffixIndex = -suffix.length;
@@ -19,9 +21,9 @@ module.exports = function (tam, assets, gulp) {
     };
   };
 
-  gulp.src(['./src/index.html'])
+  gulp.src(option.src)
     .pipe(replace(/(<link .*?href=")@tam\/(.+?)(".*?>)/g, ReplaceToHTML('.css')))
     .pipe(replace(/(<script .*?src=")@tam\/(.+?)(".*?><\/script>)/g, ReplaceToHTML('.js')))
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest(option.dest));
 
 };
