@@ -1,0 +1,30 @@
+{
+  "name": "tam-html",
+  "version": "0.0.1",
+  "description": "HTML parser for Tam.",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arrowrowe/tam-html.git"
+  },
+  "keywords": [
+    "Tam",
+    "HTML",
+    "assets"
+  ],
+  "author": "arrowrowe <arrowrowe@gmail.com> (https://github.com/arrowrowe)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arrowrowe/tam-html/issues"
+  },
+  "homepage": "https://github.com/arrowrowe/tam-html",
+  "devDependencies": {
+    "eslint": "1.8.0"
+  },
+  "dependencies": {
+    "gulp-replace": "0.5.4"
+  }
+}
